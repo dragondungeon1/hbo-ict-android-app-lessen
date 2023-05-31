@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HHSLesOpdracht</string>
+    <string name="main_save_btn_text">opslaan</string>
+    <string name="main_title_tv_text">Voeg een tv show toe</string>
+    <string name="main_name_tv_text">Naam</string>
+    <string name="main_seasons_tv_text">Aantal zeizoenen</string>
+    <string name="main_characters_tv_text">Hoofdrolspeler</string>
+    <string name="main_name_tv_name_text">naam</string>
+    <string name="main_name_et_hint">Entourage</string>
+    <string name="main_seasons_et_hint">8</string>
+    <string name="main_mainCharacter_et_hint">James Bond</string>
+    <string name="main_cancel_btn_text">Sluiten</string>
+    <string name="add_character_header_text">Personage toevoegen</string>
+    <string name="add_character_date_of_birth_text">Geboortedatum</string>
+    <string name="add_character_name_text">Naam</string>
+    <string name="add_character_btn_cancel_text">afsluiten</string>
+</resources>

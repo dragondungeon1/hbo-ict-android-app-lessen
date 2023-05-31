@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">HHSLesOpdracht</string>
+
+    <string name="main_save_btn_text">save</string>
+    <string name="main_title_tv_text">Add TV show</string>
+    <string name="main_name_tv_text">Name:</string>
+    <string name="main_seasons_tv_text">Number of seasons:</string>
+    <string name="main_characters_tv_text">Main character:</string>
+    <string name="main_name_tv_name_text">Name</string>
+    <string name="main_name_et_hint">Entourage</string>
+    <string name="main_seasons_et_hint">8</string>
+    <string name="main_mainCharacter_et_hint">James Bond</string>
+    <string name="main_cancel_btn_text">Cancel</string>
+    <string name="add_character_header_text">Add Main character</string>
+    <string name="add_character_date_of_birth_text">Date of birth</string>
+    <string name="add_character_name_text">Name</string>
+    <string name="add_character_btn_cancel_text">Cancel</string>
+
+
+    <!--    meedere talen-->
+</resources>
