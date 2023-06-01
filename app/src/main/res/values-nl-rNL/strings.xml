@@ -15,4 +15,7 @@
     <string name="add_character_date_of_birth_text">Geboortedatum</string>
     <string name="add_character_name_text">Naam</string>
     <string name="add_character_btn_cancel_text">afsluiten</string>
+    <string name="overview_title">Overzicht Activiteit</string>
+    <string name="overview_activity_go_to_show_button">Shows</string>
+    <string name="overview_activity_go_to_character">Karakters</string>
 </resources>

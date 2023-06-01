@@ -17,6 +17,8 @@ import java.util.Date;
 
 public class AddCharacterActivity extends AppCompatActivity {
 
+    private ActivityResultLauncher<Intent> launcher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +27,26 @@ public class AddCharacterActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String test  = intent.getStringExtra("testData");
         System.out.println(test);
+        launcher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    System.out.println(result.getData().getStringExtra("message"));
+                }
+        );
+
     }
 
     public void save(View view) {
         EditText nameText = findViewById(R.id.add_character_input);
-        EditText dateText = findViewById(R.id.editTextId);
+        //TODO ask jaap about date
+//        EditText dateText = findViewById(R.id.editTextId);
 
         String name = nameText.getText().toString();
+//        String dateOfBirth = dateText.getText().toString();
+        Date dateOfBirth = new Date();
 //        Date dateOfBirth = String.valueOf(dateText);
-//        Character character = new Character(name,dateOfBirth);
+        Character character = new Character(name,dateOfBirth);
+        System.out.println(character);
     }
 
     public void goTo(View view) {

@@ -15,6 +15,9 @@
     <string name="add_character_date_of_birth_text">Date of birth</string>
     <string name="add_character_name_text">Name</string>
     <string name="add_character_btn_cancel_text">Cancel</string>
+    <string name="overview_title">Overview Activities</string>
+    <string name="overview_activity_go_to_show_button">Go to shows</string>
+    <string name="overview_activity_go_to_character">Characters</string>
 
 
     <!--    meedere talen-->
