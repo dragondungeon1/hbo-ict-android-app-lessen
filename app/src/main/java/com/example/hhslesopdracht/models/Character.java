@@ -19,6 +19,10 @@ public class Character {
         this.dateOfBirth = dateOfBirth;
     }
 
+    private static ArrayList<Character> characters = new ArrayList<>();
+
+
+
     @Override
     public String toString() {
         return "Character{" +

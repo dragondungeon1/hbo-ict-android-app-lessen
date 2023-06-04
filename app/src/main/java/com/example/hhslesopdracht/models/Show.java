@@ -1,5 +1,7 @@
 package com.example.hhslesopdracht.models;
 
+import java.util.ArrayList;
+
 public class Show {
 
     private Integer id;
@@ -13,6 +15,8 @@ public class Show {
     public Show() {
 
     }
+
+    private static ArrayList<Show> shows = new ArrayList<>();
 
     public Show(Integer id) {
         this.id = id;
