@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import com.example.hhslesopdracht.models.Character;
 import com.example.hhslesopdracht.models.Show;
 
+import java.text.ParseException;
 import java.util.Date;
 
 public class AddCharacterActivity extends AppCompatActivity {
@@ -25,7 +27,7 @@ public class AddCharacterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_character);
 
         Intent intent = getIntent();
-        String test  = intent.getStringExtra("testData");
+        String test = intent.getStringExtra("testData");
         System.out.println(test);
         launcher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -36,24 +38,27 @@ public class AddCharacterActivity extends AppCompatActivity {
 
     }
 
-    public void save(View view) {
-        EditText nameText = findViewById(R.id.add_character_input);
-        //TODO ask jaap about date
-//        EditText dateText = findViewById(R.id.editTextId);
-
-        String name = nameText.getText().toString();
-//        String dateOfBirth = dateText.getText().toString();
-        Date dateOfBirth = new Date();
-//        Date dateOfBirth = String.valueOf(dateText);
-        Character character = new Character(name,dateOfBirth);
-        System.out.println(character);
-    }
-
     public void goTo(View view) {
         // sent signal to next frame
         Intent intent = new Intent();
         intent.putExtra("message", "return bericht");
         setResult(Activity.RESULT_OK, intent);
+        finish();
+    }
+
+    public void createCharacter(View view)
+            throws ParseException {
+        EditText nameET = findViewById(R.id.add_character_input);//addChar_name_et_id
+        String name = nameET.getText().toString();
+        EditText dobET = findViewById(R.id.editTextId);//addChar_dob_et_id
+        String dob = dobET.getText().toString();
+        SimpleDateFormat formatter =
+                new SimpleDateFormat("dd-MM-yyyy");
+        Date date = formatter.parse(dob);
+//Voeg zelf validatie toe!
+        Character character =
+                new Character(name,date);
+        Character.addCharacter(character);
         finish();
     }
 }

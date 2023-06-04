@@ -19,18 +19,24 @@ public class Character {
         this.dateOfBirth = dateOfBirth;
     }
 
-    private static ArrayList<Character> characters = new ArrayList<>();
+    private static ArrayList<Character> characters = new ArrayList<Character>() {{
+        add(new Character("Jon Snow"));
+        add(new Character("Vincent Chase"));
+        add(new Character("Mr. White"));
+    }};
 
+    public static void addCharacter(Character character) {
+        characters.add(character);
+    }
+
+    public static ArrayList<Character> getCharacters() {
+        return characters;
+    }
 
 
     @Override
     public String toString() {
-        return "Character{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", shows=" + shows +
-                '}';
+        return getName();
     }
 
     public Integer getId() {

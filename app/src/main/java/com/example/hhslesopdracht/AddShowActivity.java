@@ -7,8 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.example.hhslesopdracht.models.Character;
 import com.example.hhslesopdracht.models.Show;
+
+import java.text.ParseException;
 
 public class AddShowActivity extends AppCompatActivity {
 
@@ -19,6 +26,17 @@ public class AddShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_show);
 
+        Spinner spinner = findViewById(R.id.
+                addshow_characters_spnr_id);
+        ArrayAdapter<Character> adapter =
+                new ArrayAdapter<>(
+                        this,
+                        android.R.layout.
+                                simple_spinner_dropdown_item,
+                        Character.
+                                getCharacters());
+        spinner.setAdapter(adapter);
+
         launcher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -27,22 +45,39 @@ public class AddShowActivity extends AppCompatActivity {
         );
     }
 
-    public void save(View view) {
+    public void createShow(View view) throws ParseException {
         EditText nameEditText = findViewById(R.id.main_name_et_id);
         EditText seasonsEditText = findViewById(R.id.main_seasons_et_id);
+        //get character from spinner
+        Spinner spinner = findViewById(R.id.
+                addshow_characters_spnr_id);
+        Character character = (Character) spinner.getSelectedItem();
 
         String name = nameEditText.getText().toString();
         String seasons = seasonsEditText.getText().toString();
         int seasonsInt = Integer.parseInt(seasons);
 
-        Show show = new Show(name, seasonsInt);
-        System.out.println(show);
-
+        Show show = new Show(name, seasonsInt, character);
+        Show.addShow(show);
+        System.out.println(Show.getShows());
+        finish();
     }
 
     public void goToAddCharacterActivity(View view) {
 //        where
         Intent intent = new Intent(this, AddCharacterActivity.class);
+
+        //geef data door
+        String data = "data";
+        intent.putExtra("testData", data);
+//        to
+        startActivity(intent);
+        launcher.launch(intent);
+    }
+
+    public void gotToOverviewActivity(View view) {
+//        where
+        Intent intent = new Intent(this, OverviewActivity.class);
 
         //geef data door
         String data = "data";

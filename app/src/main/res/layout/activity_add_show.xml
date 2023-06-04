@@ -21,7 +21,7 @@
         android:id="@+id/main_save_btn_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="save"
+        android:onClick="createShow"
         android:text="@string/main_save_btn_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,6 +34,7 @@
         android:id="@+id/main_save_btn_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="gotToOverviewActivity"
         android:text="@string/main_cancel_btn_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +110,7 @@
         app:layout_constraintVertical_bias="0.418" />
 
     <Spinner
-        android:id="@+id/main_characters_spnr_id"
+        android:id="@+id/addshow_characters_spnr_id"
         android:layout_width="193dp"
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
