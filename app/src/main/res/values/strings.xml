@@ -18,6 +18,17 @@
     <string name="overview_title">Overview Activities</string>
     <string name="overview_activity_go_to_show_button">Go to shows</string>
     <string name="overview_activity_go_to_character">Characters</string>
+    <string name="room_specific_header_title">Room specific</string>
+    <string name="room_specific_name">Name room here</string>
+    <string name="room_specific_back_btn_text">Back</string>
+    <string name="room_specific_checkbox_task">Here name of task </string>
+    <string name="task_specific_header_title_text">Task specific  </string>
+    <string name="task_specific_name">Name of task  </string>
+    <string name="task_specific_interval_text">here interval date  </string>
+    <string name="task_specific_description_text">here description  </string>
+    <string name="task_specific_room_name">here room name  </string>
+    <string name="task_specific_checkbox_text">Done  </string>
+    <string name="task_specific_btn_text">Back  </string>
 
 
     <!--    meedere talen-->

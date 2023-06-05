@@ -18,4 +18,15 @@
     <string name="overview_title">Overzicht Activiteit</string>
     <string name="overview_activity_go_to_show_button">Shows</string>
     <string name="overview_activity_go_to_character">Karakters</string>
+    <string name="room_specific_header_title">Kamer specifiek</string>
+    <string name="room_specific_name">Kamer naam hier</string>
+    <string name="room_specific_back_btn_text">terug</string>
+    <string name="room_specific_checkbox_task">Hier naam van taak</string>
+    <string name="task_specific_header_title_text">Taak specifiek</string>
+    <string name="task_specific_name"> Hier naam taak  </string>
+    <string name="task_specific_interval_text">Hier interval datum  </string>
+    <string name="task_specific_description_text">hier description taak  </string>
+    <string name="task_specific_room_name">hier kamer naam  </string>
+    <string name="task_specific_checkbox_text">klaar  </string>
+    <string name="task_specific_btn_text">terug  </string>
 </resources>
