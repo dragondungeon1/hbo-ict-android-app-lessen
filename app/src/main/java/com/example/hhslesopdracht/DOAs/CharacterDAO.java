@@ -1,27 +1,24 @@
 package com.example.hhslesopdracht.DOAs;
 
-import com.example.hhslesopdracht.models.Show;
+import com.example.hhslesopdracht.models.Character;
 
-import java.util.ArrayList;
 import java.util.List;
-
 @Dao
-public interface ShowDAO {
+public interface CharacterDAO {
     //crud methods
 
     @Insert
-    void insert(Show show);
+    void insert(Character character);
 
     @Update
-    void update(Show show);
+    void update(Character character);
 
     @Delete
-    void delete(Show show);
+    void delete(Character character);
 
-    @Query("SELECT * FROM show")
-    List<Show> getAll();
+    @Query("SELECT * FROM character")
+    List<Character> getAll();
 
-    @Query("SELECT * FROM show WHERE id = :id")
-    Show getById(int id);
-
+    @Query("SELECT * FROM character WHERE id = :id")
+    Character getById(int id);
 }

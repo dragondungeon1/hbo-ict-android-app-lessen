@@ -56,9 +56,8 @@ public class AddCharacterActivity extends AppCompatActivity {
                 new SimpleDateFormat("dd-MM-yyyy");
         Date date = formatter.parse(dob);
 //Voeg zelf validatie toe!
-        Character character =
-                new Character(name,date);
-        Character.addCharacter(character);
+        Character character = new Character(name,date);
+        Character.addCharacter(character, this);
         finish();
     }
 }

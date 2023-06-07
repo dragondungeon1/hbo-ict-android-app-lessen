@@ -1,13 +1,26 @@
 package com.example.hhslesopdracht.models;
 
+import android.content.Context;
+
+import com.example.hhslesopdracht.Database;
+import com.example.hhslesopdracht.converters.Converter;
+
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+//needed for Room
+@Entity
 public class Character {
 
+    @PrimaryKey(autoGenerate = true)
     private Integer id;
     private String name;
+
+    @TypeConverters({Converter.class})
     private Date dateOfBirth;
+
+    @Ignore
     private ArrayList<Show> shows = new ArrayList<>();
 
     public Character(String name) {
@@ -19,20 +32,13 @@ public class Character {
         this.dateOfBirth = dateOfBirth;
     }
 
-    private static ArrayList<Character> characters = new ArrayList<Character>() {{
-        add(new Character("Jon Snow"));
-        add(new Character("Vincent Chase"));
-        add(new Character("Mr. White"));
-    }};
-
-    public static void addCharacter(Character character) {
-        characters.add(character);
+    public static void addCharacter(Character character, Context context) {
+        Database.getDatabase(context).characterDAO().insert(character);
     }
 
-    public static ArrayList<Character> getCharacters() {
-        return characters;
+    public static List<Character> getCharacters(Context context) {
+        return Database.getDatabase(context).characterDAO().getAll();
     }
-
 
     @Override
     public String toString() {

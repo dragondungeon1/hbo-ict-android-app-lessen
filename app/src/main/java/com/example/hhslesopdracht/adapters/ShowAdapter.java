@@ -1,4 +1,4 @@
-package com.example.hhslesopdracht;
+package com.example.hhslesopdracht.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hhslesopdracht.R;
 import com.example.hhslesopdracht.models.Show;
 
 import java.util.List;

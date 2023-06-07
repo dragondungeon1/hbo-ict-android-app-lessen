@@ -34,7 +34,7 @@ public class AddShowActivity extends AppCompatActivity {
                         android.R.layout.
                                 simple_spinner_dropdown_item,
                         Character.
-                                getCharacters());
+                                getCharacters(this));
         spinner.setAdapter(adapter);
 
         launcher = registerForActivityResult(
@@ -58,8 +58,11 @@ public class AddShowActivity extends AppCompatActivity {
         int seasonsInt = Integer.parseInt(seasons);
 
         Show show = new Show(name, seasonsInt, character);
-        Show.addShow(show);
-        System.out.println(Show.getShows());
+        show.setCharacterId(character.getId());
+
+
+        Show.addShow(show, this);
+        System.out.println(Show.getShows(this));
         finish();
     }
 
